@@ -1,8 +1,15 @@
 import { ArrowRight, Github, Linkedin, Mail, Play } from 'lucide-react'
 import myImage from '../assets/Chandru_img.jpg'; 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Hero() {
+    const [isVisible, setVisible] = useState(false);
+
+    useEffect(() => {
+      setVisible(true);   
+      
+    }, []);
+    
   return (
     <section
     id="home"
@@ -26,25 +33,41 @@ function Hero() {
                     <div className='space-y-4'>
                         <p
                         className={`text-green-400 font-semibold text-lg transition-all
-                        duration-1000`}>
+                        duration-1000 ${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }` }>
                             Get Read to Start Work
                         </p>
                         <h1 className={`text-5xl md:text-7xl font-black text-white leading-tight
-                            transition-all duration-1000 delay-200`}>
+                            transition-all duration-1000 delay-200 ${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }`}>
                             I'm
                             <span className='text-green-400'> Devloper</span> <br />
                             <span className='text-white'>Chandru Jayakumar</span>
                         </h1>
                         <p className={`text-gray-300 text-lg leading-relaxed max-w-lg transition-all
-                        duration-1000 delay-400`}
+                        duration-1000 delay-400 ${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }`}
                         >
                             Results-driven MCA graduate with hands-on experience in full stack development, backend services, and system integration. 
                             Proficient in Java, microservices, and cloud-based deployment. 
                             Skilled in working with distributed systems and delivering scalable solutions in agile environments. 
                             Eager to contribute to high-impact infrastructure programs and innovation.
                         </p>
-                        <div className='flex flex-wrap gap-4 pt-4 transition-all duration-1000
-                        delay-600'>
+                        <div className={`flex flex-wrap gap-4 pt-4 transition-all duration-1000
+                        delay-600${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }`}>
                             <button className='bg-green-600 text-white px-8 py-4 rounded-lg 
                             hover:bg-green-700 transition-all duration-300 flex items-center gap-2 group
                             shadow-lg hover:shadow-xl font-medium hover:scale-105'>
@@ -59,15 +82,21 @@ function Hero() {
                             </button>
                         </div>
                         {/* Social Icons to Home  */}
-                        <div className='flex gap-4 pt-6 transition-all duration-100 delay-800'>
+                        <div className={`flex gap-4 pt-6 transition-all duration-100 delay-800${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }`}>
                             <a 
                             href="https://github.com/chandrujayakumar"
+                            target="_blank"
                             className='w-12 h-12 bg-slate-700 rounded-lg flex items-center
                             justify-center hover:bg-green-600 hover:text-white transition-all
                             duration-300 group hover:scale-110 hover:rotate-6'>
                                 <Github className='w-5 h-5' />
                             </a>
                             <a href="https://www.linkedin.com/in/chandrujayakumar/"
+                            target="_blank"
                             className='w-12 h-12 bg-slate-700 rounded-lg flex items-center
                             justify-center hover:bg-green-600 hover:text-white transition-all
                             duration-300 group hover:scale-110 hover:rotate-6'>
@@ -88,7 +117,11 @@ function Hero() {
 
                 </div>
                 {/* Right Content */}
-                <div className={`relative transition-all duration-1000 delay-300`}>
+                <div className={`relative transition-all duration-1000 delay-300 ${
+                            isVisible
+                                 ? "opacity-100 translate-y-0"
+                                 : "opacity-0 translate-y-10"
+                        }`}>
                     <div className='relative'>
                         <div className='w-full max-w-lg mx-auto'>
                             <div className='relative group'>
