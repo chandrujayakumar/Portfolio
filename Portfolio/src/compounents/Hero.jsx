@@ -1,3 +1,4 @@
+import { ArrowRight, Play } from 'lucide-react'
 import React from 'react'
 
 function Hero() {
@@ -27,6 +28,37 @@ function Hero() {
                         duration-1000`}>
                             Get Read to Start Work
                         </p>
+                        <h1 className={`text-5xl md:text-7xl font-black text-white leading-tight
+                            transition-all duration-1000 delay-200`}>
+                            I'm
+                            <span className='text-green-400'> Devloper</span> <br />
+                            <span className='text-white'>Chandru Jayakumar</span>
+                        </h1>
+                        <p className={`text-gray-300 text-lg leading-relaxed max-w-lg transition-all
+                        duration-1000 delay-400`}
+                        >
+                            Results-driven MCA graduate with hands-on experience in full stack development, backend services, and system integration. 
+                            Proficient in Java, microservices, and cloud-based deployment. 
+                            Skilled in working with distributed systems and delivering scalable solutions in agile environments. 
+                            Eager to contribute to high-impact infrastructure programs and innovation.
+                        </p>
+                        <div className='flex flex-wrap gap-4 pt-4 transition-all duration-1000
+                        delay-600'>
+                            <button className='bg-green-600 text-white px-8 py-4 rounded-lg 
+                            hover:bg-green-700 transition-all duration-300 flex items-center gap-2 group
+                            shadow-lg hover:shadow-xl font-medium hover:scale-105'>
+                                Learn More
+                                <ArrowRight className='w-5 h-5 transition-transform
+                                group-hover:translate-x-1' />
+                            </button>
+                            <button className='border-2 border-slate-600 text-white px-8 py-4 rounded-lg
+                            hover:border-green-600 hover:text-green-400 transition-all duration-300
+                            font-medium flex item-center gap-2 group hover:scale-105'>
+                                <Play className="w-5 h-5" /> Play Video
+                            </button>
+                        </div>
+
+                        
                     </div>
 
                 </div>
