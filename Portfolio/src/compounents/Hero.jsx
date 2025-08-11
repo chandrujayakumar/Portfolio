@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, Mail, Play } from 'lucide-react'
 import React from 'react'
 
 function Hero() {
@@ -57,8 +57,32 @@ function Hero() {
                                 <Play className="w-5 h-5" /> Play Video
                             </button>
                         </div>
+                        {/* Social Icons to Home  */}
+                        <div className='flex gap-4 pt-6 transition-all duration-100 delay-800'>
+                            <a 
+                            href="https://github.com/chandrujayakumar"
+                            className='w-12 h-12 bg-slate-700 rounded-lg flex items-center
+                            justify-center hover:bg-green-600 hover:text-white transition-all
+                            duration-300 group hover:scale-110 hover:rotate-6'>
+                                <Github className='w-5 h-5' />
+                            </a>
+                            <a href="https://www.linkedin.com/in/chandrujayakumar/"
+                            className='w-12 h-12 bg-slate-700 rounded-lg flex items-center
+                            justify-center hover:bg-green-600 hover:text-white transition-all
+                            duration-300 group hover:scale-110 hover:rotate-6'>
+                                <Linkedin className='w-5 h-5' />
+                            </a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chandrujayakumar987@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='w-12 h-12 bg-slate-700 rounded-lg flex items-center
+                            justify-center hover:bg-green-600 hover:text-white transition-all
+                            duration-300 group hover:scale-110 hover:rotate-6'>
+                                <Mail className='w-5 h-5' />
+                            </a>
 
-                        
+                        </div>
+
                     </div>
 
                 </div>
