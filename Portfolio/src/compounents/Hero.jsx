@@ -1,4 +1,5 @@
 import { ArrowRight, Github, Linkedin, Mail, Play } from 'lucide-react'
+import myImage from '../assets/Chandru_img.jpg'; 
 import React from 'react'
 
 function Hero() {
@@ -83,6 +84,23 @@ function Hero() {
 
                         </div>
 
+                    </div>
+
+                </div>
+                {/* Right Content */}
+                <div className={`relative transition-all duration-1000 delay-300`}>
+                    <div className='relative'>
+                        <div className='w-full max-w-lg mx-auto'>
+                            <div className='relative group'>
+                                <img src={myImage} alt="" className='w-full rounded-2xl shadow-2xl transition-all duration-500
+                                group-hover:scale-105'
+                                 />
+                            </div>
+                        </div>
+                        <div className='absolute -top-4 -right-4 w-20 h-20 bg-green-600 rounded-2xl
+                        opacity-20'></div>
+                        <div className='absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500 rounded-full
+                        opacity-20'></div>
                     </div>
 
                 </div>

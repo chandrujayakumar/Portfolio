@@ -3,13 +3,13 @@ import { Menu,X } from "lucide-react";
 
 
 function Header() {
-
+      
       const [isMenuOpen, setIsOpen] = useState(false);
       const [isScrolled, setIsScrolled] = useState(false);
 
       useEffect(() => {
         const handleScroll = () => {
-          setIsScrolled(window.screenY > 50);
+          setIsScrolled(window.scrollY > 50);
         }
         window.addEventListener("scroll",handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
