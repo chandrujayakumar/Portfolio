@@ -17,9 +17,22 @@ function Hero() {
             2 w-full h-full bg-gradient-to-r from-transparent via-green-600/s to-transparent'></div>
         </div>
 
-        {/* <div className='container mx-auto'>
+        <div className='container mx-auto px-6 py-20 relative z-10'>
+            <div className='grid lg:grid-cols-2 gap-16 items-center'>
+                {/* Left Content */}
+                <div className='space-y-8'>
+                    <div className='space-y-4'>
+                        <p
+                        className={`text-green-400 font-semibold text-lg transition-all
+                        duration-1000`}>
+                            Get Read to Start Work
+                        </p>
+                    </div>
 
-        </div> */}
+                </div>
+            </div>
+
+        </div>
     </section>
   )
 }
