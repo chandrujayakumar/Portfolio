@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import myImage from '../assets/Chandru_img2.jpg'; 
 
 function About() {
+const [isvisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) =>{
+                if (entry.intersectionRatio){
+                    setIsVisible(true);
+                }
+            },{threshold: 0.3}
+        )
+        const element = document.getElementById("about");
+        if(element) observer.observe(element);
+        return () => observer.disconnect();
+    },[]);
+
   return (
     <section id='about' className='py-24 bg-slate-950 relative overflow-hidden'>
         {/* Animation background Elements */}
@@ -18,7 +33,10 @@ function About() {
             <div className='container px-6 relative z-10'>
                 <div className='grid lg:grid-cols-2 gap-16 items-space'>
                     {/* Image in leftside */}
-                    <div className={`relative transition-all duration-1000 `}>
+                    <div className={`relative transition-all duration-1000 ${
+                        isvisible 
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-10"} `}>
                         <div className='relative group'>
                             <div className='w-full max-w-md mx-auto'>
                                 <div className='relative border-4 border-green-500 rounded-2xl p-2
@@ -34,7 +52,10 @@ function About() {
                         </div>
                     </div>
                     {/* Rightside content */}
-                    <div className={`space-y-8 transition-all duration-1000 delay-300`}>
+                    <div className={`space-y-8 transition-all duration-1000 delay-300 ${
+                        isvisible 
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-10"}`}>
                         <div className='space-y-4'>
                             <p className='text-green-400 font-semibold text-lg'>About Me </p>
                             <h2 className='text-4xl md:text-5xl text-white font-bold animate-slide-up'>
@@ -47,16 +68,25 @@ function About() {
                         </div>
                         <div className='space-y-6 text-gray-300 leading-relaxed'>
                             <p className={`grid grit-cols-2 gap-8 py-6 transition-all duration-1000
-                                dealy-500 `}>
+                                dealy-400 ${
+                        isvisible 
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-10"}`}>
                                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis magnam totam aliquam ipsa. At reiciendis quo aut beatae earum, ducimus distinctio excepturi soluta. Officia praesentium a sit inventore fugit! Numquam beatae ex illo incidunt alias? Reiciendis quam optio, laborum cumque et aliquam atque sapiente ipsam!
                             </p>
-                            <p className={`transition-all duration-1000 delay-700`}>
+                            <p className={`transition-all duration-1000 delay-200 ${
+                        isvisible 
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-10"}`}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident reiciendis quod, hic sapiente sunt distinctio aliquam eaque praesentium temporibus placeat expedita ipsum numquam, beatae cum nobis minus sint voluptates.
                             </p>
                         </div>
                         <div 
                         className={`grid grid-cols-2 gap-8 py-6 transition-all duration-1000
-                            dealy-500`}
+                            dealy-600${
+                        isvisible 
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-10"}`}
                         >
                             <div className='group'>
                             <p className='text-white font-semibold group-hover:text-green-400

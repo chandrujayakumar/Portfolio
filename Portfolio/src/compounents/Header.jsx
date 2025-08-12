@@ -54,7 +54,8 @@ function Header() {
       {navItems.map((item, intex)=>{
         return (
          <button className='text-gray-300 hover:text-green-400 transition-all duration-300
-            font-medium relative group' style={{animationDelay: `${intex * 0.1}s`}}>
+            font-medium relative group'onClick={() => scrollToSection(item.href)}
+             style={{animationDelay: `${intex * 0.1}s`}}>
           {item.name}
           <span className='absolute -bottom-2 left-0 w-0 h-0.5 bg-green-400
           transition-all duration-300 group-hover:w-full'></span>
@@ -87,9 +88,13 @@ function Header() {
 >
         {navItems.map((item) => {
           return (
-            <button className='block w-fll text-left py-3 px-4 text-gray-300
+            <button 
+            key={item.href}
+            onClick={() => scrollToSection(item.href)}            className='block w-fll text-left py-3 px-4 text-gray-300
             hover:text-green-400 hover:bg-slate-700 transition-all duration-300
-            ease-in-out rounded-lg'>
+            ease-in-out rounded-lg'
+            
+            >
               {item.name}
             </button>
           )
